@@ -58,7 +58,7 @@ function displayWeather(response) {
 }
 
 function search(city) {
-  let apiKey = "7d478f69e1b2f5d563653f13f5f91d76";
+  let apiKey = "63214c4281922e3bb72fdf12dada7734";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
 }
@@ -77,7 +77,7 @@ search("Jakarta");
 //Coordinate
 function getForecast(coordinates) {
   console.log(coordinates);
-  let apiKey = "7d478f69e1b2f5d563653f13f5f91d76";
+  let apiKey = "63214c4281922e3bb72fdf12dada7734";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
@@ -127,13 +127,13 @@ function displayForecast(response) {
           src="http://openweathermap.org/img/wn/${
             forecastDay.weather[0].icon
           }@2x.png"
-          alt=""
-          width="90"
+          alt="icon"
+          width="90" class="img"
         />
-         <div class="weather-forecast-temperatures">
+         <div class="weather-forecast-temperature">
           <span class="weather-forecast-temperature"> ${Math.round(
             forecastDay.temp.max
-          )}°C / </span>
+          )}°C /</span>
           <span class="weather-forecast-temperature"> ${Math.round(
             forecastDay.temp.min
           )}°C</span>
